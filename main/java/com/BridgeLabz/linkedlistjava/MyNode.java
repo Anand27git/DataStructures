@@ -6,7 +6,7 @@ public class MyNode<K> implements INode<K> {
 	private K key;
 	private INode<K> next;
 
-	// constuctor of MyNode Class
+	// constructor of MyNode Class
 	public MyNode(K key) {
 		this.key = key;
 		this.next = null;
@@ -26,6 +26,6 @@ public class MyNode<K> implements INode<K> {
 	}
 
 	public void setNext(INode<K> next) {
-			this.next = next;
-		}
+		this.next = next;
+	}
 }

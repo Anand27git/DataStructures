@@ -1,14 +1,12 @@
 package com.BridgeLabz.linkedlistjava;
 
-import static org.junit.Assert.*;
-
 import org.junit.Assert;
 import org.junit.Test;
 
 /*************
  * 
  * @author ANAND 
- * purpose: Add Value In LinkedList 
+ * purpose: Appending Value In LinkedList
  * 
  * 
  **************/
@@ -28,7 +26,7 @@ public class MyNodeTest {
 		System.out.println(result);
 	}
 
-	// UC-2  Add value in Linked list TestCase
+	// UC-2 Add value in Linked list TestCase
 	@Test
 	public void given3elementsWhenLinkedShouldBeAddedToTop() {
 		MyNode<Integer> myfirstNode = new MyNode<>(70);
@@ -43,6 +41,24 @@ public class MyNodeTest {
 		linkedList.printMyNodes();
 		boolean result = linkedList.head.equals(mythirdNode) && linkedList.head.getNext().equals(mysecondNode)
 				&& linkedList.tail.equals(myfirstNode);
+		Assert.assertTrue(result);
+	}
+
+	// UC-3 Append value in Linked list TestCase
+	@Test
+	public void given3elementsWhenLinkedShouldBeAddedAtEnd() {
+		MyNode<Integer> myfirstNode = new MyNode<>(56);
+		MyNode<Integer> mysecondNode = new MyNode<>(30);
+		MyNode<Integer> mythirdNode = new MyNode<>(70);
+		LinkedList linkedList = new LinkedList();
+		// Append Node to LinkedList
+		linkedList.append(myfirstNode);
+		linkedList.append(mysecondNode);
+		linkedList.append(mythirdNode);
+		// Printing Output of LinkedList Node 56->30->70
+		linkedList.printMyNodes();
+		boolean result = linkedList.head.equals(myfirstNode) && linkedList.head.getNext().equals(mysecondNode)
+				&& linkedList.tail.equals(mythirdNode);
 		Assert.assertTrue(result);
 	}
 
