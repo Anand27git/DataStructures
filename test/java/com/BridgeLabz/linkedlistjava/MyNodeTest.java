@@ -6,7 +6,7 @@ import org.junit.Test;
 /*************
  * 
  * @author ANAND
- * purpose: Deletion of First Node In LinkedList UC-5
+ * purpose: Deletion of last value of Node In LinkedList UC-6
  * 
  * 
  **************/
@@ -96,4 +96,23 @@ public class MyNodeTest {
 		                myLinkList.tail.equals(myThirdNode);
 		        Assert.assertTrue(result);
 		    }
+		// UC-6 Delete last value in node of linked list
+		  @Test
+		   public void given3element_WhenDeletedLastNodePrintLinkedList() {
+		        MyNode<Integer> myFirstNode = new MyNode<>(56);
+		        MyNode<Integer> mySecondNode = new MyNode<>(30);
+		        MyNode<Integer> myThirdNode = new MyNode<>(70);
+		        LinkedList myLinkList = new LinkedList();
+		        myLinkList.add(myFirstNode);
+		        myLinkList.append(mySecondNode);
+		        myLinkList.append(myThirdNode);
+		        myLinkList.printMyNodes();
+		        //deletion of last value of Node
+		        myLinkList.popLast();
+		        myLinkList.printMyNodes();
+		        boolean result = myLinkList.head.equals(myFirstNode) &&
+		                myLinkList.tail.equals(mySecondNode);
+		        Assert.assertTrue(result);
+		}
+
 }

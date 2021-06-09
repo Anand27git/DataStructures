@@ -58,10 +58,21 @@ public class LinkedList {
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
 	}
-	//delete node value UC-5
+
+	// delete node value UC-5
 	public INode pop() {
 		INode tempNode = this.head;
 		this.head = head.getNext();
 		return tempNode;
+	}
+
+	// method to delete last element of node UC6
+	public void popLast() {
+		INode tempNode = head;
+		while (!tempNode.getNext().equals(tail)) {
+			tempNode = tempNode.getNext();
+		}
+		this.tail = tempNode;
+		tempNode.setNext(null);
 	}
 }
