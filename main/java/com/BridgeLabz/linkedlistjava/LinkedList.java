@@ -10,7 +10,7 @@ public class LinkedList {
 		this.tail = null;
 	}
 
-	// add method
+	// add method UC - 2
 	public void add(INode newNode) {
 		if (this.tail == null) {
 			this.tail = newNode;
@@ -24,7 +24,7 @@ public class LinkedList {
 		}
 	}
 
-	// append method
+	// append method UC-3
 	public void append(INode newNode) {
 		if (this.head == null) {
 			this.head = newNode;
@@ -35,6 +35,14 @@ public class LinkedList {
 			this.tail.setNext(newNode);
 			this.tail = newNode;
 		}
+	}
+
+	// insert middle node UC4
+
+	public void insertmiddleNode(INode myNode, INode newNode) {
+		INode tempNode = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
 	}
 
 	// method to print the values of Linked List
@@ -49,5 +57,11 @@ public class LinkedList {
 		}
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
+	}
+
+	public INode pop() {
+		INode tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
 	}
 }

@@ -5,8 +5,8 @@ import org.junit.Test;
 
 /*************
  * 
- * @author ANAND 
- * purpose: Appending Value In LinkedList
+ * @author ANAND
+ * purpose: Insertion of A Node Between Two Nodes In LinkedList UC-4
  * 
  * 
  **************/
@@ -59,6 +59,23 @@ public class MyNodeTest {
 		linkedList.printMyNodes();
 		boolean result = linkedList.head.equals(myfirstNode) && linkedList.head.getNext().equals(mysecondNode)
 				&& linkedList.tail.equals(mythirdNode);
+		Assert.assertTrue(result);
+	}
+
+	// UC4 insert node b/w two nodes in linked list
+	@Test
+	public void given3elements_WhenInsertedBetweenLinkedList() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(40);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		LinkedList myLinkList = new LinkedList();
+		myLinkList.add(myFirstNode);
+		myLinkList.append(myThirdNode);
+		// insertion of a Node
+		myLinkList.insertmiddleNode(myFirstNode, mySecondNode);
+		myLinkList.printMyNodes();
+		boolean result = myLinkList.head.equals(myFirstNode) && myLinkList.head.getNext().equals(mySecondNode)
+				&& myLinkList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);
 	}
 
