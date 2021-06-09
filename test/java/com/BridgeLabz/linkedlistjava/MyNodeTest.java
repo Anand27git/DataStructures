@@ -6,7 +6,7 @@ import org.junit.Test;
 /*************
  * 
  * @author ANAND
- * purpose: Deletion of last value of Node In LinkedList UC-6
+ * purpose: search value of Node In LinkedList UC-7
  * 
  * 
  **************/
@@ -114,5 +114,20 @@ public class MyNodeTest {
 		                myLinkList.tail.equals(mySecondNode);
 		        Assert.assertTrue(result);
 		}
+			// UC7 method to search value in node of linked list test case
+		  @Test
+		    public void given3elements_WhenSearchNodePrintLinkedList() {
+		        MyNode<Integer> myFirstNode = new MyNode<>(56);
+		        MyNode<Integer> mySecondNode = new MyNode<>(30);
+		        MyNode<Integer> myThirdNode = new MyNode<>(70);
+		        LinkedList myLinkList = new LinkedList();
+		        myLinkList.add(myFirstNode);
+		        myLinkList.append(mySecondNode);
+		        myLinkList.append(myThirdNode);
+		        myLinkList.printMyNodes();
+		        boolean result = myLinkList.search(mySecondNode);
+		        Assert.assertTrue(result);
+		    } 
+
 
 }
