@@ -6,7 +6,7 @@ import org.junit.Test;
 /*************
  * 
  * @author ANAND
- * purpose: Insertion of A Node Between Two Nodes In LinkedList UC-4
+ * purpose: Deletion of First Node In LinkedList UC-5
  * 
  * 
  **************/
@@ -79,4 +79,21 @@ public class MyNodeTest {
 		Assert.assertTrue(result);
 	}
 
+	// UC-5 Delete First  Value of Node in test case
+		  @Test
+		    public void given3elements_WhenDeletedFirstNodeLinkedList() {
+		        MyNode<Integer> myFirstNode = new MyNode<>(26);
+		        MyNode<Integer> mySecondNode = new MyNode<>(30);
+		        MyNode<Integer> myThirdNode = new MyNode<>(70);
+		        LinkedList myLinkList = new LinkedList();
+		        myLinkList.add(myFirstNode);
+		        myLinkList.append(mySecondNode);
+		        myLinkList.append(myThirdNode);
+		        myLinkList.printMyNodes();
+		        myLinkList.pop();
+		        myLinkList.printMyNodes();
+		        boolean result = myLinkList.head.equals(mySecondNode) &&
+		                myLinkList.tail.equals(myThirdNode);
+		        Assert.assertTrue(result);
+		    }
 }

@@ -10,7 +10,7 @@ public class LinkedList {
 		this.tail = null;
 	}
 
-	// add method UC - 2
+	// add method UC - 1
 	public void add(INode newNode) {
 		if (this.tail == null) {
 			this.tail = newNode;
@@ -24,7 +24,7 @@ public class LinkedList {
 		}
 	}
 
-	// append method UC-3
+	// append method UC-2
 	public void append(INode newNode) {
 		if (this.head == null) {
 			this.head = newNode;
@@ -37,7 +37,7 @@ public class LinkedList {
 		}
 	}
 
-	// insert middle node UC4
+	// insert middle node UC3
 
 	public void insertmiddleNode(INode myNode, INode newNode) {
 		INode tempNode = myNode.getNext();
@@ -58,7 +58,7 @@ public class LinkedList {
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
 	}
-
+	//delete node value UC-5
 	public INode pop() {
 		INode tempNode = this.head;
 		this.head = head.getNext();
